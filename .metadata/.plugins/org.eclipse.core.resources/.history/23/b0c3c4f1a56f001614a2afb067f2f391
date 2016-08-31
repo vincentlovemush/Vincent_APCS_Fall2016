@@ -1,0 +1,7 @@
+
+public class DoMath {
+	public static void main(String[] args){
+		String baba= Calculate.foil(1,1,1,1,hi);
+		System.out.println(baba);
+	}
+}

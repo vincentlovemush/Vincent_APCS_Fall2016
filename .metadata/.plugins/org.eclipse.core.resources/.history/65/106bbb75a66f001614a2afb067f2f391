@@ -1,0 +1,7 @@
+
+public class DoMath {
+	public static void main(String[] args){
+		boolean baba= Calculate.isDivisibleBy(24,2);
+		System.out.println(baba);
+	}
+}
