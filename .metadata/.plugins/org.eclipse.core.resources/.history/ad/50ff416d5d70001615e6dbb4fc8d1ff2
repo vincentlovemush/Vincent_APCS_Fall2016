@@ -44,59 +44,11 @@ public class Calculate {
 	}
 	public static double absValue(double a){
 		if (a<0){
-			return (-a);
+			a=a*-1;
+			return (a);
 			}
 		else{
 			return a;
-			}
-	}
-	public static int max(int a, int b){
-		if (a>b){
-			return a;
-		}
-		else{
-			return b;
-		}
-	}
-	public static double max(double a, double b, double c){
-		if (a>b){
-			if (a>c){
-				return a;
-				}
-			else if(c>b){
-				return c;
-				}
-			}	
-		else if(b>c){
-			if (b>a){
-				return b;
-				}
-			else if(a>c){
-				return a;
-				}
-			}
-		else{
-			return c;
-		}
-	}
-	public static int min(int a, int b){
-		if(a>b)
-			return b;
-		else
-			return a;
-	}
-	public static double round2(double a){
-		int b= (int) (10*a);
-		double answer;
-		if(10*a-b>=.5){
-			answer= (int) (100*a+1);
-			answer=answer/100;
-			return answer;
-			}
-		else{
-			answer= (int) (100*a);
-			answer=answer/100;
-			return answer;
 			}
 	}
 }

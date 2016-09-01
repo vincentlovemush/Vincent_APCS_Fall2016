@@ -2,9 +2,9 @@
 public class DoMath {
 	public static void main(String[] args){
 		double baba= -10;
-		double haha=3.056;
+		double haha=3.053;
 		double caca=4;
-		double bababa=Calculate.max(caca,haha,haha);
+		double bababa=Calculate.round2(haha);
 		System.out.println(bababa);
 	}
 }

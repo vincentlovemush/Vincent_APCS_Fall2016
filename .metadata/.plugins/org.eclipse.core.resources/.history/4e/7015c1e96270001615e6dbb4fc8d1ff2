@@ -4,7 +4,7 @@ public class DoMath {
 		double baba= -10;
 		double haha=3.056;
 		double caca=4;
-		double bababa=Calculate.max(caca,haha,haha);
+		double bababa=Calculate.round2(haha);
 		System.out.println(bababa);
 	}
 }

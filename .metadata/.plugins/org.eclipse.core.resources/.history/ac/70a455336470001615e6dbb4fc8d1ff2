@@ -75,9 +75,8 @@ public class Calculate {
 				return a;
 				}
 			}
-		else{
+		else
 			return c;
-		}
 	}
 	public static int min(int a, int b){
 		if(a>b)

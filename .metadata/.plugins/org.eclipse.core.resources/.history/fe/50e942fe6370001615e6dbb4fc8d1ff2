@@ -65,7 +65,6 @@ public class Calculate {
 				}
 			else if(c>b){
 				return c;
-				}
 			}	
 		else if(b>c){
 			if (b>a){
@@ -75,9 +74,8 @@ public class Calculate {
 				return a;
 				}
 			}
-		else{
+		else
 			return c;
-		}
 	}
 	public static int min(int a, int b){
 		if(a>b)

@@ -63,21 +63,14 @@ public class Calculate {
 			if (a>c){
 				return a;
 				}
-			else if(c>b){
-				return c;
-				}
-			}	
+			}
 		else if(b>c){
 			if (b>a){
 				return b;
 				}
-			else if(a>c){
-				return a;
-				}
 			}
-		else{
+		else
 			return c;
-		}
 	}
 	public static int min(int a, int b){
 		if(a>b)
@@ -88,7 +81,7 @@ public class Calculate {
 	public static double round2(double a){
 		int b= (int) (10*a);
 		double answer;
-		if(10*a-b>=.5){
+		if(a-b>=.5){
 			answer= (int) (100*a+1);
 			answer=answer/100;
 			return answer;
