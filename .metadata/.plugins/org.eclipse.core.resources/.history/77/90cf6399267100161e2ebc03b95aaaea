@@ -59,11 +59,11 @@ public class Calculate {
 		}
 	}
 	public static double max(double a, double b, double c){
-		if (a>b){
+		/*if (a>b){
 			if (a>c){
 				return a;
 				}
-			else{
+			else if(c>b){
 				return c;
 				}
 			}	
@@ -71,13 +71,13 @@ public class Calculate {
 			if (b>a){
 				return b;
 				}
-			else{
+			else if(a>c){
 				return a;
 				}
 			}
-		else{
+		else{*/
 			return c;
-		}
+		//}
 	}
 	public static int min(int a, int b){
 		if(a>b)
@@ -99,36 +99,4 @@ public class Calculate {
 			return answer;
 			}
 	}
-	public static double exponent(double num, int power){
-		double answer=num;
-		for(int i=0;i<power;i++){
-			answer=answer*num;
-			}
-		return answer;
-	}
-	public static int factorial(int num){
-		int answer=1;
-		for(int i=num;i>0;i--){
-			answer=answer*i;
-		}
-		return answer;
-	}
-	public static boolean prime(int num){
-		for(int i=num-1;i>1;i--){
-			if (isDivisibleBy(i,num)==true)
-				return false;
-		}
-		return true;
-	}
-	public static int gcf(int a, int b){
-		int answer=1;
-		for (int i=max(a,b);i>=0;i--){
-			if(isDivisibleBy(a,i)==true&&isDivisibleBy(b,i)){
-				answer=i;
-				break;
-			}
-		}
-		return answer;
-	}
-	
 }

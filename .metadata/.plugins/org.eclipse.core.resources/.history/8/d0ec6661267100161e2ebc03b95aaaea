@@ -1,0 +1,10 @@
+
+public class DoMath {
+	public static void main(String[] args){
+		double baba= -10;
+		double haha=3.055;
+		double caca=4;
+		double bababa=Calculate.round2(haha);
+		System.out.println(bababa);
+	}
+}

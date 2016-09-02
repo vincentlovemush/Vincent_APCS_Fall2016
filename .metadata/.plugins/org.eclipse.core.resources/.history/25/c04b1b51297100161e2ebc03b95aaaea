@@ -113,22 +113,11 @@ public class Calculate {
 		}
 		return answer;
 	}
-	public static boolean prime(int num){
-		for(int i=num-1;i>1;i--){
-			if (isDivisibleBy(i,num)==true)
+	public static void prime(int num){
+		for(int i=num;i>1;i--){
+			if (isDivisible(i,num)==true)
 				return false;
 		}
 		return true;
 	}
-	public static int gcf(int a, int b){
-		int answer=1;
-		for (int i=max(a,b);i>=0;i--){
-			if(isDivisibleBy(a,i)==true&&isDivisibleBy(b,i)){
-				answer=i;
-				break;
-			}
-		}
-		return answer;
-	}
-	
 }

@@ -1,0 +1,10 @@
+
+public class DoMath {
+	public static void main(String[] args){
+		double baba= 30;
+		double haha=5.0557;
+		double caca=4;
+		double bababa=Calculate.max(haha,baba,caca);
+		System.out.println(bababa);
+	}
+}

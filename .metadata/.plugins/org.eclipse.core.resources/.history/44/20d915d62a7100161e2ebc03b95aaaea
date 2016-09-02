@@ -121,14 +121,10 @@ public class Calculate {
 		return true;
 	}
 	public static int gcf(int a, int b){
-		int answer=1;
 		for (int i=max(a,b);i>=0;i--){
-			if(isDivisibleBy(a,i)==true&&isDivisibleBy(b,i)){
-				answer=i;
-				break;
-			}
+			if(isDivisibleBy(a,i)==true&&isDivisibleBy(b,i))
+				return i;
 		}
-		return answer;
+		return a;
 	}
-	
 }

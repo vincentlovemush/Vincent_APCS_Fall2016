@@ -1,9 +1,9 @@
 
 public class DoMath {
 	public static void main(String[] args){
-		int baba= 26;
+		int baba= 30;
 		double haha=5.0557;
-		int caca= 3;
+		int caca=20;
 		;
 		System.out.println(Calculate.gcf(caca,baba));
 	}
