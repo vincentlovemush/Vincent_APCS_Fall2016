@@ -21,6 +21,9 @@ public class Calculate {
 	public static double discriminant(double a,double b,double c){
 		return(b*b-4*a*c);
 	}
+	public static int discriminant(int a,int b,int c){
+		return(b*b-4*a*c);
+	}
 	public static String toImproperFrac(int a, int b, int c){
 		int topnumber=a*c+b;
 		String answer=(topnumber + "/" + c);
@@ -122,13 +125,54 @@ public class Calculate {
 	}
 	public static int gcf(int a, int b){
 		int answer=1;
-		for (int i=max(a,b);i>=0;i--){
+		if(a<0)
+			a=-a;
+		if(b<0)
+			b=-b;
+		if (a==0)
+			return b;
+		if (b==0)
+			return a;
+		for (int i=min(a,b);i>=0;i--){
 			if(isDivisibleBy(a,i)==true&&isDivisibleBy(b,i)){
 				answer=i;
-				break;
+				return answer;
 			}
 		}
 		return answer;
+	}
+	public static double sqrt(double number){
+		double decimal=0.0000000000001;
+		double estimate=number;
+		double low=0;
+		double high=number+1;
+		while(absValue(estimate*estimate-number)>decimal){
+			estimate=(low+high)/2;
+			if(estimate*estimate>number)
+				high=estimate;
+			else
+				low=estimate;
+		}
+		return estimate;	
+	}
+	public static String quadForm(int a, int b, int c){
+		double answer;
+		double answer2;
+		double squareroot;
+		if(discriminant(a,b,c)<0)
+			return ("no real roots");
+		else if(discriminant(a,b,c)==0){
+			squareroot=sqrt((double) (discriminant(a,b,c)));
+			answer=round2((-b)/(2*a));
+			return answer+" ";
+		}
+		else{
+			squareroot=sqrt((double) (discriminant(a,b,c)));
+			answer=round2((-b+squareroot)/(2*a));
+			answer2=round2((-b-squareroot)/(2*a));
+			return answer+" and "+answer2;
+		}
+		
 	}
 	
 }

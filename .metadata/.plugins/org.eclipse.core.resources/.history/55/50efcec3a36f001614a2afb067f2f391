@@ -1,7 +1,0 @@
-
-public class DoMath {
-	public static void main(String[] args){
-		String baba=Calculate.toImprooperFrac(2,5,4)
-		System.out.println(baba);
-	}
-}

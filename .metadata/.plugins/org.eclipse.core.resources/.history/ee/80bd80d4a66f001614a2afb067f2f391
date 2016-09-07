@@ -1,7 +1,0 @@
-
-public class DoMath {
-	public static void main(String[] args){
-		 double baba= Calculate.absValue(3,2);
-		System.out.println(baba);
-	}
-}

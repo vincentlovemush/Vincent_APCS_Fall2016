@@ -1,9 +1,0 @@
-
-public class DoMath {
-	public static void main(String[] args){
-		int baba= -10;
-		int haha=3
-		int bababa=Calculate.max(baba,haha);
-		System.out.println(bababa);
-	}
-}

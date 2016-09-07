@@ -1,7 +1,0 @@
-
-public class DoMath {
-	public static void main(String[] args){
-		String baba= Calculate.toMixedNum(5,2);
-		System.out.println(baba);
-	}
-}

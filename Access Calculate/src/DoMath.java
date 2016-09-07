@@ -1,10 +1,10 @@
 
 public class DoMath {
 	public static void main(String[] args){
-		int baba= 26;
-		double haha=5.0557;
+		int baba= -6;
+		double haha=.81;
 		int caca= 3;
-		;
-		System.out.println(Calculate.gcf(caca,baba));
+		;;;;;;
+		System.out.println(Calculate.sqrt(36));
 	}
 }
