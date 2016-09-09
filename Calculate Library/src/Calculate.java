@@ -142,7 +142,7 @@ public class Calculate {
 		return answer;
 	}
 	public static double sqrt(double number){
-		double decimal=0.0000000000001;
+		double decimal=0.00000000000001;
 		double estimate=number;
 		double low=0;
 		double high=number+1;
