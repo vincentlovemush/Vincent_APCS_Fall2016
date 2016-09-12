@@ -1,4 +1,3 @@
-
 public class Calculate {
 	public static int square(int number){
 		return (number*number);
@@ -62,21 +61,11 @@ public class Calculate {
 		}
 	}
 	public static double max(double a, double b, double c){
-		if (a>b){
-			if (a>c){
+			if (a>c&&a>b){
 				return a;
 				}
-			else{
-				return c;
-				}
-			}	
-		else if(b>c){
-			if (b>a){
+		else if(b>c&&b>a){
 				return b;
-				}
-			else{
-				return a;
-				}
 			}
 		else{
 			return c;
