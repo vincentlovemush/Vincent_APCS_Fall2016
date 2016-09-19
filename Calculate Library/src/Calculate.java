@@ -39,6 +39,8 @@ public class Calculate {
 		return answer;
 	}
 	public static boolean isDivisibleBy(int a, int b){
+		if(b==0)
+			throw new IllegalArgumentException("Divisor can't be 0!!!");
 		if (a%b==0)
 			return true;
 		else
@@ -92,6 +94,8 @@ public class Calculate {
 			}
 	}
 	public static double exponent(double num, int power){
+		if (power<0)
+			throw new IllegalArgumentException("Sorry, my algorithm can't do negative powers");
 		double answer=num;
 		for(int i=0;i<power;i++){
 			answer=answer*num;
@@ -99,6 +103,8 @@ public class Calculate {
 		return answer;
 	}
 	public static int factorial(int num){
+		if(num<0)
+			throw new IllegalArgumentException("No negative numbers for factorials!!");
 		int answer=1;
 		for(int i=num;i>0;i--){
 			answer=answer*i;
@@ -131,6 +137,8 @@ public class Calculate {
 		return answer;
 	}
 	public static double sqrt(double number){
+		if (number<0)
+			throw new IllegalArgumentException("Can't square root a negative number!!");
 		double decimal=0.00000000000001;
 		double estimate=number;
 		double low=0;

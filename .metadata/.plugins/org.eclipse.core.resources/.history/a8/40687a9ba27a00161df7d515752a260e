@@ -5,6 +5,6 @@ public class DoMath {
 		double haha=.81;
 		int caca= 3;
 		;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-		System.out.println(Calculate.sqrt(-1));
+		System.out.println(Calculate.sqrt(16));
 	}
 }
