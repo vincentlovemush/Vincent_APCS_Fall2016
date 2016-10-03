@@ -32,7 +32,7 @@ public class ProcessingNumbers {
 		if(evenSum==1){
 			System.out.println("max: "+max);
 			System.out.println("min: "+min);
-			System.out.println("You did not enter any even numbers");
+			System.out.println("Your did not enter any even numbers");
 		}
 		else{
 					System.out.println("max: "+max);
