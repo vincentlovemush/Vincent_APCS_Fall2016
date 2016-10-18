@@ -1,13 +1,15 @@
 import java.util.*;
 public class HourglassNathan {
 	public static void main(String[] args){
-		Scanner Input=new Scanner(System.in);
-		System.out.println("How big do you want your hourglass(integar value)?");
-		int size=Input.nextInt();
-		specialLine(2*size);
-		for(int i=-size+1;i<=size-1;i++){
-			int positive=i;if (i<0)positive=-i;
-			for(int j=size-positive-1;j>=0;j--)
+		Scanner size=new Scanner(System.in);
+		System.out.println("How big do you want your hourglass(integar value)");
+		int x=size.nextInt();
+		specialLine(2*x);
+		for(int i=-x+1;i<=x-1;i++){
+			int positive=i;
+			if (i<0)
+				positive=-i;
+			for(int j=x-1-positive;j>=0;j--)
 				System.out.print(" ");
 			if(i<0){
 				System.out.print("\\");
@@ -19,10 +21,10 @@ public class HourglassNathan {
 				colons(positive);
 				System.out.println("\\");
 			}
-			else 
+			else
 				System.out.println("||");
 		}
-		specialLine(2*size);
+		specialLine(2*x);
 	}
 	public static void specialLine(int number){
 		System.out.print("|");
@@ -35,3 +37,4 @@ public class HourglassNathan {
 			System.out.print("::");
 	}
 }
+

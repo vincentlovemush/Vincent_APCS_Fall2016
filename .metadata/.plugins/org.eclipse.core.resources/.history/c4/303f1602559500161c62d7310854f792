@@ -6,7 +6,9 @@ public class HourglassNathan {
 		int size=Input.nextInt();
 		specialLine(2*size);
 		for(int i=-size+1;i<=size-1;i++){
-			int positive=i;if (i<0)positive=-i;
+			int positive=i;
+			if (i<0)
+				positive=-i;
 			for(int j=size-positive-1;j>=0;j--)
 				System.out.print(" ");
 			if(i<0){
@@ -19,7 +21,7 @@ public class HourglassNathan {
 				colons(positive);
 				System.out.println("\\");
 			}
-			else 
+			else
 				System.out.println("||");
 		}
 		specialLine(2*size);
@@ -35,3 +37,4 @@ public class HourglassNathan {
 			System.out.print("::");
 	}
 }
+
