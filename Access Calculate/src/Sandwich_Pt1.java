@@ -3,7 +3,7 @@ public class Sandwich_Pt1 {
 
 
 	public static void main(String[] args) {
-		String test="stuffbreadmeatbreadtomatobreadstuff";
+		String test="breadmeatleetucebreadmayoketchupbread";
 		String answer=sandwich(test);
 		System.out.println((answer));
 		//String.split();
@@ -35,11 +35,15 @@ public class Sandwich_Pt1 {
 
 	}
 	public static String sandwich(String messedUpSandwich){
+		if(messedUpSandwich.indexOf("bread")<0||messedUpSandwich.indexOf("bread")==messedUpSandwich.lastIndexOf("bread"))
+			return "Not a sandwich!";
 		String orderedSandwich=messedUpSandwich.substring(messedUpSandwich.indexOf("bread"), messedUpSandwich.lastIndexOf("bread"));
 		String split[] =orderedSandwich.split("bread");
 		String answer="";
 		for(int i=1;i<split.length;i++)
-				answer=answer+split[i];
+					answer=answer+split[i];
+		if (answer.trim().length()==0)
+			return "Not a sandwich!";
 		return answer;
 	}
 
