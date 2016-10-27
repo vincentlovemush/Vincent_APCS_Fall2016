@@ -5,6 +5,17 @@
 		<item value="C:\Users\APCS2\Downloads\magpie3 - Vincent Yang"/>
 		<item value="C:\Users\APCS2\Downloads\magpie2 - Vincent Yang\MagPie2"/>
 	</list>
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\APCS2\Desktop\Vincent_APCS_Fall2016"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
 	<section name="NewWizardAction">
 	</section>
 	<section name="ChooseWorkspaceDialogSettings">

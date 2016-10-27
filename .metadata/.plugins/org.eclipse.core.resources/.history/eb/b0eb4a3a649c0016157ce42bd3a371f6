@@ -3,7 +3,7 @@ public class Sandwich_Pt1 {
 
 
 	public static void main(String[] args) {
-		String test="breadmeatleetuceeadmayoketchuead";
+		String test="breadmeatleetucebreadmayoketchupead";
 		String answer=sandwich(test);
 		System.out.println((answer));
 		//String.split();
