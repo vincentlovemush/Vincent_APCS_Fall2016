@@ -1,11 +1,30 @@
+import java.util.Arrays;
 
 public class Sandwich_Pt1 {
 
 
 	public static void main(String[] args) {
-		String test="breadmeatleetuceeadmayoketchuead";
-		String answer=sandwich(test);
-		System.out.println((answer));
+		System.out.println(Arrays.toString("I really really like really red apples".split("really")));
+		System.out.println(Arrays.toString("I like red apples".split(" ")));
+		//test for Part 1
+		System.out.println(sandwich_Pt1("breadmeatleetuceeadmayoketchuead"));
+		System.out.println(sandwich_Pt1("breadbread"));
+		System.out.println(sandwich_Pt1("bread"));
+		System.out.println(sandwich_Pt1("breadsomethingbreadmeatbreadmeat"));
+		System.out.println(sandwich_Pt1("cheesebreadsomethingbread"));
+		System.out.println(sandwich_Pt1("cheesebreadsomethingbreadotherstuff"));
+		System.out.println(sandwich_Pt1("breadbreadsomethingbread"));
+		System.out.println();
+		//test for Part 2
+		System.out.println(sandwich_Pt2("bread mayo bread mayo bread"));
+		System.out.println(sandwich_Pt2("something bread mayo bread mayo bread"));	
+		System.out.println(sandwich_Pt2("bread bread bread"));
+		System.out.println(sandwich_Pt2("bread something bread bread"));
+		System.out.println(sandwich_Pt2("bread something bread meat cheese bread"));
+		System.out.println(sandwich_Pt2("something bread bread bread"));
+		System.out.println(sandwich_Pt2("rottenstuff bread cheese bread bread meat"));
+		System.out.println(sandwich_Pt2("bread bread"));
+		System.out.println(sandwich_Pt2("bread"));
 		//String.split();
 		//It's a method that acts on a string, <StringName>.split(<String sp>);
 		//Where sp is the string where the string splits
@@ -34,13 +53,26 @@ public class Sandwich_Pt1 {
 
 
 	}
-	public static String sandwich(String messedUpSandwich){
+	public static String sandwich_Pt1(String messedUpSandwich){
 		if(messedUpSandwich.indexOf("bread")<0||messedUpSandwich.indexOf("bread")==messedUpSandwich.lastIndexOf("bread"))
 			return "Not a sandwich!";
 		String orderedSandwich=messedUpSandwich.substring(messedUpSandwich.indexOf("bread"), messedUpSandwich.lastIndexOf("bread"));
 		String split[] =orderedSandwich.split("bread");
 		String answer="";
 		for(int i=1;i<split.length;i++)
+					answer=answer+split[i];
+		if (answer.trim().length()==0)
+			return "Not a sandwich!";
+		return answer;
+	}
+	public static String sandwich_Pt2(String messedUpSandwich){
+		if(messedUpSandwich.indexOf("bread")<0||messedUpSandwich.indexOf("bread")==messedUpSandwich.lastIndexOf("bread"))
+			return "Not a sandwich!";
+		String orderedSandwich=messedUpSandwich.substring(messedUpSandwich.indexOf("bread"), messedUpSandwich.lastIndexOf("bread"));
+		String split[] =orderedSandwich.split(" ");
+		String answer="";
+		for(int i=0;i<split.length;i++)
+				if(!split[i].equals("bread"))
 					answer=answer+split[i];
 		if (answer.trim().length()==0)
 			return "Not a sandwich!";

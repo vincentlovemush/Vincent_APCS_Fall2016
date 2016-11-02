@@ -34,7 +34,13 @@ public class Magpie4 {
 			response = "Tell me more about your family.";
 		} 
 		else if (findKeyword(statement,"Dreyer")>=0){
-			response=("Ms. Dreyer is great at teaching!!!!");
+			response=("Ms. Dreyer is great at APCS!!!!");
+		}
+		else if (findKeyword(statement,"seniors")>=0){
+			response=("Being a senior is hard.");
+		}
+		else if (findKeyword(statement,"stupid")>=0){
+			response=("Stupid is a bad word.");
 		}
 		else if (findKeyword(statement,"math")>=0
 				||findKeyword(statement,"physics")>=0){
