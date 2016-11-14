@@ -54,13 +54,13 @@ public class FracCalc {
 		String numerator="0";
 		String denominator="1";
 		if (answer.indexOf('/')!=-1){
-			numerator=answer.substring(answer.indexOf('_'),answer.indexOf('/') );
-			denominator=answer.substring(answer.indexOf('/')+1);
+			numerator=input.substring(input.indexOf('_'),input.indexOf('/') );
+			denominator=input.substring(input.indexOf('/')+1);
 		}
 		if(answer.indexOf('_')!=-1)
-			whole=answer.substring(0,input.indexOf('_'));
+			whole=input.substring(0,input.indexOf('_'));
 		else if(answer.indexOf('/')==-1)
-			whole=answer.substring(0);
+			whole=input.substring(0);
 		answer="whole:"+numerator+" numerator:"+numerator+" denominator:"+denominator;
 		return answer;
 		
