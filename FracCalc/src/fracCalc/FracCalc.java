@@ -30,8 +30,8 @@ public class FracCalc {
 	//      e.g. return ==> "1_1/4"
 	public static String produceAnswer(String input)
 	{ 
-		/*
-		String answer="";
+		
+/*		String answer="";
 		String temp="";
 		if(input.indexOf("+")!=-1){
 			answer=input.substring(input.indexOf("+")+1);
@@ -45,24 +45,21 @@ public class FracCalc {
 		else{
 			temp=input.substring(input.indexOf("/")+1);
 			answer=temp.substring(temp.indexOf("/")+1);
-		}
-		return answer;
-		 */
-		String answer="";
-		answer=input.substring(input.lastIndexOf(" ")+1);
+		}*/
+		String answer=input.substring(input.lastIndexOf(' ')+1);
+		
+		String finalAnswer="";
 		String whole="0";
 		String numerator="0";
 		String denominator="1";
-		if (answer.indexOf('/')!=-1){
-			numerator=answer.substring(answer.indexOf('_'),answer.indexOf('/') );
-			denominator=answer.substring(answer.indexOf('/')+1);
-		}
-		if(answer.indexOf('_')!=-1)
-			whole=answer.substring(0,input.indexOf('_'));
+		if (answer.indexOf('/')==-1){
+			whole=answer;
+		if(answer.indexOf('_')==-1)
+			answer.substring(0,input.indexOf('_'));
 		else if(answer.indexOf('/')==-1)
 			whole=answer.substring(0);
-		answer="whole:"+numerator+" numerator:"+numerator+" denominator:"+denominator;
-		return answer;
+		finalAnswer="whole:"+whole+" numerator:"+numerator+" denominator:"+denominator;
+		return finalAnswer;
 		
 
 		// TODO: Implement this function to produce the solution to the input
