@@ -55,14 +55,14 @@ public class FracCalc {
 		if (answer.indexOf('/')==-1){
 			whole=answer;
 		}
-		else if(answer.indexOf('_')==-1){
-			numerator=answer.substring(0,answer.indexOf('/'));
-			denominator=answer.substring(answer.indexOf('/')+1,answer.length());
+		else if(answer.indexOf('_')==-1&&answer.indexOf('/')==-1){
+			numerator=answer.substring(0,input.indexOf('/'));
+			denominator=answer.substring(input.indexOf('/'+1),answer.length());
 		}
 		else{
-			whole=answer.substring(0,answer.indexOf('_'));
-			numerator=answer.substring(answer.indexOf('_')+1,answer.indexOf('/'));
-			denominator=answer.substring(answer.indexOf('/')+1,answer.length());
+			whole=answer.substring(0,input.indexOf('_'));
+			numerator=answer.substring(input.indexOf('_')+1,input.indexOf('/'));
+			denominator=answer.substring(input.indexOf('/'+1),answer.length());
 		}
 		finalAnswer="whole:"+whole+" numerator:"+numerator+" denominator:"+denominator;
 		return finalAnswer;
