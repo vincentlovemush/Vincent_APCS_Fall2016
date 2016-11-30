@@ -28,7 +28,6 @@ public class FracCalc {
 		else
 			return divideFrac(firstOperand,secondOperand);
 	}
-	//splits the string into first operand, operator, and second operand
 	public static String [] parseInput(String input){
 		String [] answer=input.split(" "); 
 		return answer;
@@ -59,7 +58,7 @@ public class FracCalc {
 		if(wholeNum>=0)
 			easyOperand[0]=wholeNum*easyOperand[1]+numeratorNum;
 		else
-			easyOperand[0]=wholeNum*easyOperand[1]-numeratorNum; //if the operand is negative
+			easyOperand[0]=wholeNum*easyOperand[1]-numeratorNum;
 		return easyOperand;
 		}
 	public static String addFrac (int [] operand1, int [] operand2){
