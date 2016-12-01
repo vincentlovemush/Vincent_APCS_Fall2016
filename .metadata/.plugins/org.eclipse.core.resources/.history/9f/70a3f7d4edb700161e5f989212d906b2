@@ -17,7 +17,8 @@ public class FracCalc {
 	}
 	public static String produceAnswer (String input){
 		String [] question=parseInput(input);
-		int [] answer=parseOperand(question[0]);
+		int [] firstOperand=parseOperand(question[0]);
+		int [] answer=firstOperand;
 		for(int i=1;i<question.length;i=i+2){
 		if (question[i].equals("+"))
 			answer= addFrac(answer,parseOperand(question[i+1]));
@@ -93,16 +94,18 @@ public class FracCalc {
 		notSimp=evaluated;
 		String finalAnswer="";
 		int whole=0;
-		int numerator=notSimp[0];
-		int denominator=notSimp[1];
-		for(int i=numerator;i>0;i--){
-			if(denominator%i==0){
-				denominator=denominator/i;
-				numerator=numerator/i;
+		int numerator=0;
+		int denominator=1;
+		for(int i=notSimp[0];i>0;i--){
+			if(notSimp[1]%i==0){
+				notSimp[0]=notSimp[0]/i;
+				notSimp[1]=notSimp[1]/i;
 			}
 		}
-			whole=numerator/denominator; // getting whole number by dividing numerator by denominator
-			numerator=numerator-(whole*denominator);//subtracting the numerator by the whole number value
+		if(notSimp[0]>=notSimp[1]){
+			whole=notSimp[0]/notSimp[1]; // getting whole number by dividing numerator by denominator
+			numerator=notSimp[0]-(whole*notSimp[1]);//subtracting the numerator by the whole number value
+		}
 		if(numerator==0){
 			finalAnswer=""+whole;
 		}
