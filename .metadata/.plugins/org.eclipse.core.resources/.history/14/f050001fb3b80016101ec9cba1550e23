@@ -1,7 +1,7 @@
 package fracCalc;
 import java.util.*;
 
-public class FracCalc {
+public class FracCalc4 {
 	public static void main (String [] args){
 		Scanner input=new Scanner (System.in);
 		System.out.println("Please input");
@@ -93,30 +93,17 @@ public class FracCalc {
 		notSimp=evaluated;
 		String finalAnswer="";
 		int whole=0;
-		int min;
-		int max;
-		int numerator=notSimp[0];
-		int denominator=notSimp[1];		
-		
-		//simplifying fractions
-		if(notSimp[0]<notSimp[1]){
-			min=notSimp[0];
-			max=notSimp[1];
-		}
-		else{
-			min=notSimp[1];
-			max=notSimp[0];
-		}
-		for(int i=min;i>1;i--){
-			if(max%i==0&&min%i==0){
+		int numerator=0;
+		int denominator=1;
+		for(int i=notSimp[0];i>0;i--){
+			if(notSimp[1]%i==0){
 				notSimp[0]=notSimp[0]/i;
 				notSimp[1]=notSimp[1]/i;
-				break;
 			}
 		}
 			whole=notSimp[0]/notSimp[1]; // getting whole number by dividing numerator by denominator
-			numerator=notSimp[0]%notSimp[1];//subtracting the numerator by the whole number value
-			denominator=notSimp[1];
+			numerator=notSimp[0]-(whole*notSimp[1]);//subtracting the numerator by the whole number value
+		
 		if(numerator!=0&&whole!=0){
 			finalAnswer=whole+"_"+numerator+"/"+denominator;
 		}

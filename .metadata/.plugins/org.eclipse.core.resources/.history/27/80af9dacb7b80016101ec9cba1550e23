@@ -93,38 +93,24 @@ public class FracCalc {
 		notSimp=evaluated;
 		String finalAnswer="";
 		int whole=0;
-		int min;
-		int max;
 		int numerator=notSimp[0];
-		int denominator=notSimp[1];		
-		
-		//simplifying fractions
-		if(notSimp[0]<notSimp[1]){
-			min=notSimp[0];
-			max=notSimp[1];
-		}
-		else{
-			min=notSimp[1];
-			max=notSimp[0];
-		}
-		for(int i=min;i>1;i--){
-			if(max%i==0&&min%i==0){
-				notSimp[0]=notSimp[0]/i;
-				notSimp[1]=notSimp[1]/i;
-				break;
+		int denominator=notSimp[1];
+		for(int i=numerator;i>0;i--){
+			if(denominator%i==0){
+				denominator=denominator/i;
+				numerator=numerator/i;
 			}
 		}
-			whole=notSimp[0]/notSimp[1]; // getting whole number by dividing numerator by denominator
-			numerator=notSimp[0]%notSimp[1];//subtracting the numerator by the whole number value
-			denominator=notSimp[1];
-		if(numerator!=0&&whole!=0){
-			finalAnswer=whole+"_"+numerator+"/"+denominator;
+			whole=numerator/denominator; // getting whole number by dividing numerator by denominator
+			numerator=numerator-(whole*denominator);//subtracting the numerator by the whole number value
+		if(numerator==0){
+			finalAnswer=""+whole;
 		}
 		else if(whole==0){
 			finalAnswer=numerator+"/"+denominator;
 		}
 		else
-			finalAnswer=""+whole;
+			finalAnswer=whole+"_"+numerator+"/"+denominator;
 		return finalAnswer;
 	}
 	
