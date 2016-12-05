@@ -1,7 +1,7 @@
 package fracCalc;
 import java.util.*;
 
-public class FracCalc3 {
+public class FracCalc {
 	public static void main (String [] args){
 		Scanner input=new Scanner (System.in);
 		System.out.println("Please input");
@@ -54,8 +54,6 @@ public class FracCalc3 {
 		//changes to improper fraction
 		int wholeNum=Integer.parseInt(whole);
 		int numeratorNum=Integer.parseInt(numerator);
-		if(wholeNum<0)
-			numeratorNum=-numeratorNum;
 		easyOperand[1]=Integer.parseInt(denominator);
 		easyOperand[0]=wholeNum*easyOperand[1]+numeratorNum;
 		return easyOperand;

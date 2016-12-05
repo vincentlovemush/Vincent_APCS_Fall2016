@@ -1,7 +1,7 @@
 package fracCalc;
 import java.util.*;
 
-public class FracCalc4 {
+public class FracCalc {
 	public static void main (String [] args){
 		Scanner input=new Scanner (System.in);
 		System.out.println("Please input");
@@ -111,13 +111,12 @@ public class FracCalc4 {
 			if(max%i==0&&min%i==0){
 				notSimp[0]=notSimp[0]/i;
 				notSimp[1]=notSimp[1]/i;
-				break;
 			}
 		}
 			whole=notSimp[0]/notSimp[1]; // getting whole number by dividing numerator by denominator
 			numerator=notSimp[0]%notSimp[1];//subtracting the numerator by the whole number value
 			denominator=notSimp[1];
-		if(numerator<0){
+		if(whole!=0&&numerator<0){
 				numerator=numerator*-1;
 			}
 		if(denominator<0){
