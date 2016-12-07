@@ -15,6 +15,7 @@ public class FracCalc4 {
 		}
 	}
 	public static String produceAnswer (String input){
+		
 		String [] question=parseInput(input);
 		int [] answer=parseOperand(question[0]);
 		for(int i=1;i<question.length;i=i+2){
@@ -27,16 +28,15 @@ public class FracCalc4 {
 		else
 			answer=divideFrac(answer,parseOperand(question[i+1]));
 		}
-		return simplify(answer);
+		return toMixed(reduceFrac(answer));
 	}
 	public static String [] parseInput(String input){
 		String [] answer=input.split(" "); 
 		return answer;
-		
 	}
 	public static int []parseOperand (String operand){
 		//also toImproper
-		int [] easyOperand=new int [2];
+		int [] easyOperand=new int [3];
 		String whole="0";
 		String numerator="0";
 		String denominator="1";
@@ -57,12 +57,13 @@ public class FracCalc4 {
 		int numeratorNum=Integer.parseInt(numerator);
 		if(wholeNum<0)
 			numeratorNum=-numeratorNum;
+		easyOperand[2]=0;
 		easyOperand[1]=Integer.parseInt(denominator);
 		easyOperand[0]=wholeNum*easyOperand[1]+numeratorNum;
 		return easyOperand;
 		}
 	public static int[] addFrac (int [] operand1, int [] operand2){
-		int [] answer=new int[2];
+		int [] answer=new int[3];
 		int commonDen=operand1[1]*operand2[1]; //a*b is always a common factor of a and b
 		int sumOfNumerator=operand1[0]*operand2[1]+operand2[0]*operand1[1]; //adding the numerator (multiply to make denominator the common factor)
 		answer[0]=sumOfNumerator;
@@ -74,7 +75,7 @@ public class FracCalc4 {
 		return addFrac(operand1, operand2);
 	}
 	public static int[] multiplyFrac (int [] operand1, int [] operand2){
-		int [] answer=new int[2];
+		int [] answer=new int[3];
 		int numerator=operand1[0]*operand2[0]; //multiply numerator
 		int denominator=operand1[1]*operand2[1]; //multiply denominator
 		answer[0]=numerator;
@@ -82,30 +83,37 @@ public class FracCalc4 {
 		return answer;
 	}
 	public static int[] divideFrac  (int [] operand1, int [] operand2){
-		int [] answer=new int[2];
+		int [] answer=new int[3];
 		int numerator=operand1[0]*operand2[1];//flips the second operator's numerator and denominator
 		int denominator=operand1[1]*operand2[0];//flips the second operator's numerator and denominator
 		answer[0]=numerator;
 		answer[1]=denominator;
 		return answer;
 	}
-	public static String simplify(int [] evaluated){
+	public static int [] reduceFrac(int [] evaluated){
 		int[] notSimp=new int[2];
 		notSimp=evaluated;
-		String finalAnswer="";
-		int whole=0;
+		notSimp[2]=0;
 		int min;
-		int max;
-		int numerator=notSimp[0];
-		int denominator=notSimp[1];		
+		int max;	
 		//simplifying fractions
+		int number1=notSimp[0];
+		int number2=notSimp[1];
+		if(number2==0){
+			notSimp[2]=1;
+			return notSimp;
+		}
+		if(notSimp[0]<0)
+			number1=-number1;
+		if(notSimp[1]<0)
+			number2=-number2;
 		if(notSimp[0]<notSimp[1]){
-			min=notSimp[0];
-			max=notSimp[1];
+			min=number1;
+			max=number2;
 		}
 		else{
-			min=notSimp[1];
-			max=notSimp[0];
+			min=number2;
+			max=number1;
 		}
 		for(int i=min;i>1;i--){
 			if(max%i==0&&min%i==0){
@@ -114,26 +122,44 @@ public class FracCalc4 {
 				break;
 			}
 		}
-			whole=notSimp[0]/notSimp[1]; // getting whole number by dividing numerator by denominator
-			numerator=notSimp[0]%notSimp[1];//subtracting the numerator by the whole number value
-			denominator=notSimp[1];
-		if(numerator<0){
-				numerator=numerator*-1;
+		return notSimp;
+	}
+		public static String toMixed (int [] simplified){
+			int[] answer=new int[3];
+			if(simplified[2]==1)
+				return "Cannot divide by zero";
+			if(simplified[1]<0){
+				answer[0]=-simplified[0];
+				answer[1]=-simplified[1];
 			}
-		if(denominator<0){
-				denominator=denominator*-1;
+			else{
+				answer[0]=simplified[0];
+				answer[1]=simplified[1];
 			}
-		if(numerator!=0&&whole!=0){
-			finalAnswer=whole+"_"+numerator+"/"+denominator;
+		int whole=0, numerator=0, denominator=1;
+		if(answer[0]%answer[1]==0||-answer[0]%answer[1]==0)
+			return ""+answer[0]/answer[1];
+		else if(answer[0]==0)
+			return ""+0;
+		//check if numerator is larger than denominator
+		else if((-answer[0]<answer[1]&&answer[0]<0)||(answer[0]>0&&answer[0]<answer[1])){
+			numerator=answer[0];
+			denominator=answer[1];
+			return numerator+"/"+denominator;
 		}
-		else if(whole==0&&numerator==0){
-			finalAnswer=""+numerator;
+		else if(answer[0]<0&&answer[1]<-answer[0]){
+			denominator=answer[1];
+			numerator=-answer[0]%denominator;
+			whole=answer[0]/answer[1];
+			return whole+"_"+numerator+"/"+denominator;
 		}
-		else if(whole==0){
-			finalAnswer=numerator+"/"+denominator;
+		else if(answer[0]==0)
+			return ""+0;
+		else{
+			denominator=answer[1];
+			numerator=answer[0]%denominator;
+			whole=answer[0]/answer[1];
+			return whole+"_"+numerator+"/"+denominator;
 		}
-		else
-			finalAnswer=""+whole;
-		return finalAnswer;
 	}
 }
